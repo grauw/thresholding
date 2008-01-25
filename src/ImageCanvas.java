@@ -24,9 +24,11 @@ public class ImageCanvas extends Canvas {
 	
 	// Adjust this matrix to achieve different kinds of blur/effects
 	double[][] blurMatrix = {
-			{ 1, 1, 1 },
-			{ 1, 1, 1 },
-			{ 1, 1, 1 }
+			{  2,  4,  5,  4,  2 },
+			{  4,  9, 12,  9,  4 },
+			{  5, 12, 15, 12,  5 },
+			{  4,  9, 12,  9,  4 },
+			{  2,  4,  5,  4,  2 }
 		};
 	
 	/**
@@ -134,7 +136,7 @@ public class ImageCanvas extends Canvas {
 	public BufferedImage thresholdImage(BufferedImage sourceImage, int[] thresholds) {
 		int width = sourceImage.getWidth();
 		int height = sourceImage.getHeight();
-		double step = 255.0 / K;
+		double step = 255.0 / (K - 1);
 		BufferedImage destImage = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 		
 		for (int x = 0; x < width; x++) {

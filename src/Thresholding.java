@@ -132,6 +132,7 @@ public class Thresholding extends Frame implements WindowListener, ActionListene
 			try {
 				int segments = Integer.parseInt(JOptionPane.showInputDialog(this, "Number of segments:", ic.K));
 				if (segments > 1) {
+					ic.K = segments;
 					ic.initialize();
 				} else {
 					System.err.println("*** Minimum number of segments must be 1");

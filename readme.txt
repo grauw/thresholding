@@ -54,12 +54,8 @@ Improvement
 My improvement applies a low-pass filter (a.k.a. a blur) to the image before thresholding it. This removes
 some high-frequency that decrease the accuracy of the thresholding.
 
-The blurring is done based on the blurMatrix in the ImageCanvas class. I am using a very simple blur right now,
-but this array can be adjusted to get a better blur result. The current blur is:
-
-[ 1  1  1 ]
-[ 1  1  1 ]
-[ 1  1  1 ]
+The blurring is done based on the blurMatrix variable in the ImageCanvas class. This matrix can be tweaked
+to try out different masks and their effects on the thresholding.
 
 
 ~Grauw
